@@ -1,20 +1,20 @@
 // --- Chillies  quantity Controls ---
 
-const chilliesQtyEl = document.getElementById("chillies-qty");
-const chilliesTotalEl = document.getElementById("clilies-total");
+const chilliesQty = document.getElementById("chillies-qty");
+const chilliesTotal = document.getElementById("clilies-total");
 const chilliesPrice = 59;
 
 document.getElementById("clilies-plus").addEventListener("click", () => {
-    chilliesQtyEl.textContent = parseInt(chilliesQtyEl.textContent) + 1;
-    chilliesTotalEl.textContent = parseInt(chilliesQtyEl.textContent) * chilliesPrice;
+    chilliesQty.textContent = parseInt(chilliesQty.textContent) + 1;
+    chilliesTotal.textContent = parseInt(chilliesQty.textContent) * chilliesPrice;
     updateTotal();
 });
 
 document.getElementById("clilies-minus").addEventListener("click", () => {
-    let qty = parseInt(chilliesQtyEl.textContent);
+    let qty = parseInt(chilliesQty.textContent);
     if (qty > 1) {
-        chilliesQtyEl.textContent = qty - 1;
-        chilliesTotalEl.textContent = (qty - 1) * chilliesPrice;
+        chilliesQty.textContent = qty - 1;
+        chilliesTotal.textContent = (qty - 1) * chilliesPrice;
         updateTotal();
     }
 });
@@ -25,21 +25,21 @@ document.getElementById("clilies-remove").addEventListener("click", () => {
 });
 
 // --- Cardamom Controls ---
-const cardamomQtyEl = document.getElementById("siasid-qty");
-const cardamomTotalEl = document.getElementById("siasid-total");
+const cardamomQty = document.getElementById("siasid-qty");
+const cardamomTotal = document.getElementById("siasid-total");
 const cardamomPrice = 329;
 
 document.getElementById("siasid-plus").addEventListener("click", () => {
-    cardamomQtyEl.textContent = parseInt(cardamomQtyEl.textContent) + 1;
-    cardamomTotalEl.textContent = parseInt(cardamomQtyEl.textContent) * cardamomPrice;
+    cardamomQty.textContent = parseInt(cardamomQty.textContent) + 1;
+    cardamomTotal.textContent = parseInt(cardamomQty.textContent) * cardamomPrice;
     updateTotal();
 });
 
 document.getElementById("siasid-minus").addEventListener("click", () => {
-    let qty = parseInt(cardamomQtyEl.textContent);
+    let qty = parseInt(cardamomQty.textContent);
     if (qty > 1) {
-        cardamomQtyEl.textContent = qty - 1;
-        cardamomTotalEl.textContent = (qty - 1) * cardamomPrice;
+        cardamomQty.textContent = qty - 1;
+        cardamomTotal.textContent = (qty - 1) * cardamomPrice;
         updateTotal();
     }
 });
@@ -62,9 +62,9 @@ function updateTotal() {
 }
 
 
-// --- Place Order: redirect to thank-you page ---
+// Place Order → Open new page
 document.getElementById("place-order").addEventListener("click", () => {
-    window.location.href = "Thank You For Shopping With Us !";
+    window.open("Thank You");
 });
 
 // Initial total calculation
